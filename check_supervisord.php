@@ -66,7 +66,7 @@ class SuperVisorNagios
             $this->writeError("Wrong script usage : use -h <hostname> -p <pattern>", self::NAGIOS_STATE_UNKNOWN);
         }
         $this->serverName  = $getopt['h'];
-        $this->grepPattern = preg_quote($getopt['p'], '/');    
+        $this->grepPattern = $getopt['p'];    
     }
 
     private function xmlRPCRequest($request, array $params = array())
